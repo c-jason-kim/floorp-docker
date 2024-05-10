@@ -1,0 +1,7 @@
+#!/bin/sh
+
+#export FLOORP_VERSION=11.12.2
+
+export GID=$(id -g)
+
+docker compose up --build

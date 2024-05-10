@@ -1,0 +1,20 @@
+name: floorp
+services:
+  floorp:
+    build:
+      context: .
+      args:
+        FLOORP_VERSION: "${FLOORP_VERSION}"
+        USER: "$USER"
+        UID: "${UID:-1000}"
+        GID: "${GID:-1000}"
+    image: "floorp:${FLOORP_VERSION:-latest}"
+    network_mode: "host"
+    ipc: "host"
+    user: "${USER}"
+    volumes:
+      - "${HOME}:${HOME}"
+    privileged: true
+    stdin_open: true
+    tty: true
+    restart: "no"
