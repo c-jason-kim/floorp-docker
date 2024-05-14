@@ -10,11 +10,11 @@ services:
         GID: "${GID:-1000}"
     image: "floorp:${FLOORP_VERSION:-latest}"
     network_mode: "host"
-    ipc: "host"
+    #ipc: "host"
     user: "${USER}"
     volumes:
       - "${HOME}:${HOME}"
-    privileged: true
+    #privileged: true
     stdin_open: true
     tty: true
     restart: "no"
